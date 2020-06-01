@@ -15,7 +15,7 @@ namespace P3.Ed25519.HdKey
 
     public static class Ed25519HdKey
     {
-        private const string PathRegex = "^m(\\/[0-9]+')+$";
+        private const string PathRegex = "^*(\\/[0-9]*\\'?)+$";
         private const string Ed25519Curve = "ed25519 seed";
         private const long HardenedOffset = 0x80000000;
 

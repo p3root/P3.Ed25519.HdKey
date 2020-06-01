@@ -55,7 +55,16 @@ namespace P3.Ed25519.HdKey.Tests
 
         }
 
-        private void TestHdKeyPath(string path, string seed, string chainCode, string key, string publicKey)
+
+        [Fact]
+        public void TestHdKey3()
+        {
+            var seed = "b27f12f76d9bc717c0edb3d2a2245ab24bc295ca5a9d0e79f7bd84b2bdf5b976d7b436b60ca268e3d2cea9ba379ad7278384ad12b6ee5cfecc4a9fa9203705e9";
+            TestHdKeyPath("m/44'/2403'/0'/0/0", seed, "80d917d3f588a3ed85de6ca018eb4a488a38cc6c071ee9560716f1e5ae2ffa39",
+                "0ee72a115bad7e3a1cfaa765ba07065f150f022a6d6eebcb51f58de4b72b47cc", "006e7fa4de9ce6609620128d77c183c8845a283a0aa0ef675ccfd8a17c60e681a6");
+        }
+
+private void TestHdKeyPath(string path, string seed, string chainCode, string key, string publicKey)
         {
             var derivedKey = Ed25519HdKey.DerivePath(path, seed.FromHex());
 
